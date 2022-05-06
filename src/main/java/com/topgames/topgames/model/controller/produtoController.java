@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
 
@@ -46,7 +47,7 @@ public class produtoController {
 				.orElse(ResponseEntity.status(HttpStatus.NOT_FOUND).build());
 		}
 	
-	@GetMapping("/produto/{nome}")
+	@GetMapping("/nome/{nome}") //localhost8080/produto/nome/{nome do produto}
 	public ResponseEntity<List<produto>> getByNome(@PathVariable String nome){
 		return ResponseEntity.ok(produtoRepository.findAllByNomeContainingIgnoreCase(nome));
 		}
@@ -66,12 +67,14 @@ public class produtoController {
 		return ResponseEntity.status(HttpStatus.OK).body(produtoRepository.save(produto));
 	return ResponseEntity.status(HttpStatus.BAD_REQUEST).build();
 		}	else
-	return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
+				return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
 	}
 	
 	
+	@ResponseStatus(HttpStatus.NO_CONTENT)
 	@DeleteMapping("/{id}")
-	public void delete(@PathVariable Long id) {
+	public void delete(@PathVariable long id) {
+		
 		produtoRepository.deleteById(id);
 	
 		}

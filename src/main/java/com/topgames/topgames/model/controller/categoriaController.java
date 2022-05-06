@@ -40,9 +40,9 @@ public class categoriaController {
 		return topGamesRep.findById(id).map(resposta -> ResponseEntity.ok(resposta))
 				.orElse(ResponseEntity.notFound().build());
 		}
-	@GetMapping("/genero/{genero}")
-	public ResponseEntity<List<categoria>> getAllGenero(@PathVariable String genero){
-		return ResponseEntity.ok(topGamesRep.findAllByGeneroContainingIgnoreCase(genero));
+	@GetMapping("/jogosEletronicos/{jogosEletronicos}")
+	public ResponseEntity<List<categoria>> getByjogosEletronicos(@PathVariable String jogosEletronicos){
+		return ResponseEntity.ok(topGamesRep.findAllByjogosEletronicosContainingIgnoreCase(jogosEletronicos));
 	}
 	
 	@PostMapping
@@ -58,6 +58,7 @@ public class categoriaController {
 		})
 				.orElse(ResponseEntity.notFound().build());
 	}	
+	
 	
 	@DeleteMapping("/{id}")
 	public void delete (@PathVariable Long id) {

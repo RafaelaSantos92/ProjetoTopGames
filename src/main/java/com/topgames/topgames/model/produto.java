@@ -23,21 +23,23 @@ public class produto {
 	private String nome;
 	
 	@NotNull
-	private String faixaEtaria;
-	
-	@NotNull
-	private String departamento;
+	private String marca;
 	
 	@NotNull
 	private String preco;
 	
-	@NotNull
-	private String quantidadeEmEstoque;
+	
+	private String idadeRecomendada;
+	
+	
+	private String numeroDeJogadores;
 	
 	@ManyToOne
 	@JsonIgnoreProperties("produto")
 	private categoria categoria;
 
+
+	
 
 	public long getId() {
 		return id;
@@ -55,20 +57,12 @@ public class produto {
 		this.nome = nome;
 	}
 
-	public String getFaixaEtaria() {
-		return faixaEtaria;
+	public String getMarca() {
+		return marca;
 	}
 
-	public void setFaixaEtaria(String faixaEtaria) {
-		this.faixaEtaria = faixaEtaria;
-	}
-
-	public String getDepartamento() {
-		return departamento;
-	}
-
-	public void setDepartamento(String departamento) {
-		this.departamento = departamento;
+	public void setMarca(String marca) {
+		this.marca = marca;
 	}
 
 	public String getPreco() {
@@ -79,12 +73,20 @@ public class produto {
 		this.preco = preco;
 	}
 
-	public String getQuantidadeEmEstoque() {
-		return quantidadeEmEstoque;
+	public String getIdadeRecomendada() {
+		return idadeRecomendada;
 	}
 
-	public void setQuantidadeEmEstoque(String quantidadeEmEstoque) {
-		this.quantidadeEmEstoque = quantidadeEmEstoque;
+	public void setIdadeRecomendada(String idadeRecomendada) {
+		this.idadeRecomendada = idadeRecomendada;
+	}
+
+	public String getNumeroDeJogadores() {
+		return numeroDeJogadores;
+	}
+
+	public void setNumeroDeJogadores(String numeroDeJogadores) {
+		this.numeroDeJogadores = numeroDeJogadores;
 	}
 
 	public categoria getCategoria() {

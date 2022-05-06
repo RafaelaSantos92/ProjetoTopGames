@@ -24,24 +24,26 @@ public class categoria {
 	public long id;
 	
 	@NotNull
-	public String genero;
+	public String jogosEletronicos;
 	
 	@NotNull
-	public String descricao;
+	public String jogosTabuleiro;
 	
 	@NotNull
-	public String tipo;
+	public String cartas;
 	
 	@NotNull
-	public String faixaEtaria;
+	public String brinquedos;
 	
 	@NotNull
-	public String multiplayer;
+	public String acessorios;
 	
 	@OneToMany(mappedBy = "categoria" , cascade = CascadeType.ALL)
 	@JsonIgnoreProperties("categoria")
 	private List<produto> produto;	
 	
+	
+
 	public long getId() {
 		return id;
 	}
@@ -50,44 +52,44 @@ public class categoria {
 		this.id = id;
 	}
 
-	public String getGenero() {
-		return genero;
+	public String getJogosEletronicos() {
+		return jogosEletronicos;
 	}
 
-	public void setGenero(String genero) {
-		this.genero = genero;
+	public void setJogosEletronicos(String jogosEletronicos) {
+		this.jogosEletronicos = jogosEletronicos;
 	}
 
-	public String getDescricao() {
-		return descricao;
+	public String getJogosTabuleiro() {
+		return jogosTabuleiro;
 	}
 
-	public void setDescricao(String descricao) {
-		this.descricao = descricao;
+	public void setJogosTabuleiro(String jogosTabuleiro) {
+		this.jogosTabuleiro = jogosTabuleiro;
 	}
 
-	public String getTipo() {
-		return tipo;
+	public String getCartas() {
+		return cartas;
 	}
 
-	public void setTipo(String tipo) {
-		this.tipo = tipo;
+	public void setCartas(String cartas) {
+		cartas = cartas;
 	}
 
-	public String getFaixaEtaria() {
-		return faixaEtaria;
+	public String getBrinquedos() {
+		return brinquedos;
 	}
 
-	public void setFaixaEtaria(String faixaEtaria) {
-		this.faixaEtaria = faixaEtaria;
+	public void setBrinquedos(String brinquedos) {
+		brinquedos = brinquedos;
 	}
 
-	public String getMultiplayer() {
-		return multiplayer;
+	public String getAcessorios() {
+		return acessorios;
 	}
 
-	public void setMultiplayer(String multiplayer) {
-		this.multiplayer = multiplayer;
+	public void setAcessorios(String acessorios) {
+		acessorios = acessorios;
 	}
 
 	public List<produto> getProduto() {
