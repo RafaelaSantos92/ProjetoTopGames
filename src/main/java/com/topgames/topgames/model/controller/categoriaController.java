@@ -40,10 +40,10 @@ public class categoriaController {
 		return topGamesRep.findById(id).map(resposta -> ResponseEntity.ok(resposta))
 				.orElse(ResponseEntity.notFound().build());
 		}
-	@GetMapping("/jogosEletronicos/{jogosEletronicos}")
-	public ResponseEntity<List<categoria>> getByjogosEletronicos(@PathVariable String jogosEletronicos){
-		return ResponseEntity.ok(topGamesRep.findAllByjogosEletronicosContainingIgnoreCase(jogosEletronicos));
-	}
+	@GetMapping("/descricao/{descricao}")
+	public ResponseEntity<List<categoria>> getByDescricao(@PathVariable String descricao){
+		return ResponseEntity.ok(topGamesRep.findAllByDescricaoContainingIgnoreCase(descricao));
+		}
 	
 	@PostMapping
 	public ResponseEntity<categoria> postCategoria (@Valid @RequestBody categoria categoria){

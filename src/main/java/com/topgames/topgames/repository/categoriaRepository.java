@@ -9,6 +9,6 @@ import com.topgames.topgames.model.categoria;
 
 @Repository
 public interface categoriaRepository extends JpaRepository <categoria, Long>{
-	public List<categoria>findAllByjogosEletronicosContainingIgnoreCase(String jogosEletronicos);
+	public List<categoria>findAllByDescricaoContainingIgnoreCase(String descricao);
 
 }

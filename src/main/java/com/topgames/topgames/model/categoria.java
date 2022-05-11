@@ -24,83 +24,46 @@ public class categoria {
 	public long id;
 	
 	@NotNull
-	public String jogosEletronicos;
+	public String descricao;
 	
-	@NotNull
-	public String jogosTabuleiro;
-	
-	@NotNull
-	public String cartas;
-	
-	@NotNull
-	public String brinquedos;
-	
-	@NotNull
-	public String acessorios;
 	
 	@OneToMany(mappedBy = "categoria" , cascade = CascadeType.ALL)
 	@JsonIgnoreProperties("categoria")
-	private List<produto> produto;	
-	
-	
+	private List<produto> produto;
+
 
 	public long getId() {
 		return id;
 	}
 
+
 	public void setId(long id) {
 		this.id = id;
 	}
 
-	public String getJogosEletronicos() {
-		return jogosEletronicos;
+
+	public String getDescricao() {
+		return descricao;
 	}
 
-	public void setJogosEletronicos(String jogosEletronicos) {
-		this.jogosEletronicos = jogosEletronicos;
+
+	public void setDescricao(String descricao) {
+		this.descricao = descricao;
 	}
 
-	public String getJogosTabuleiro() {
-		return jogosTabuleiro;
-	}
-
-	public void setJogosTabuleiro(String jogosTabuleiro) {
-		this.jogosTabuleiro = jogosTabuleiro;
-	}
-
-	public String getCartas() {
-		return cartas;
-	}
-
-	public void setCartas(String cartas) {
-		cartas = cartas;
-	}
-
-	public String getBrinquedos() {
-		return brinquedos;
-	}
-
-	public void setBrinquedos(String brinquedos) {
-		brinquedos = brinquedos;
-	}
-
-	public String getAcessorios() {
-		return acessorios;
-	}
-
-	public void setAcessorios(String acessorios) {
-		acessorios = acessorios;
-	}
 
 	public List<produto> getProduto() {
 		return produto;
 	}
 
+
 	public void setProduto(List<produto> produto) {
 		this.produto = produto;
-	}
+	}	
+	
+	
 
-
+	
 	
 
 }
